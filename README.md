@@ -3,10 +3,9 @@
 ## How to run
 
 ```bash
-npm init 
+npm init
 npm i --save-dev cypress
 npm start
 ```
 
 coming soon.
-
