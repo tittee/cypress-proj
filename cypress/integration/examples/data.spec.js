@@ -17,4 +17,11 @@ describe('Write / Read Data to JSON / Text file', () => {
   it('should read and verify data from the text file', () => {
     cy.readFile('log.txt').should('eq', 'My name is Wittawat Kittiwarabud');
   });
+
+  it('should read and verify browser document content', () => {
+    cy.visit('https://example.com');
+    cy.wait(2000);
+    cy.document().its('contentType').should('eq', 'text/html');
+    cy.document().should('have.property', 'charset').and('eq', 'UTF-8');
+  });
 });
