@@ -18,11 +18,32 @@ class HomePage extends BasePage {
 }
 
 describe('Abstraction with Classes', () => {
-  it('should scroll down and up on the page', () => {
+  before(() => {
+    /*
+     * Runs before all tests inside describe
+     * Setup test data or test context
+     * Seed or reset the database
+     */
     HomePage.loadHomePage();
-    HomePage.wait(5000);
+  });
+  after(() => {
+    /*
+     * Runs after all test inside describe block are done
+     * Test clean up
+     * Clean cookies or LocalStorage
+     * */
+  });
+  beforeEach(() => {
+    /* Runs before each it block the describe */
+  });
+  afterEach(() => {
+    /* Runs after each it block in the describe */
+  });
+
+  it('First init', () => {
     HomePage.scrollToBottom();
     HomePage.wait(5000);
     HomePage.scrollToTop();
+    HomePage.wait(5000);
   });
 });
